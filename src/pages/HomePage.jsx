@@ -8,7 +8,6 @@ const HomePage = async ({ popularMovies }) => {
   return (
     <div className="md:-mt-[64px] space-y-14">
       <BannerSection popularMovies={popularMovies} />
-
       <Trending trendingShows={trendingShows} />
     </div>
   );
