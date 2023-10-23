@@ -14,7 +14,6 @@ import Link from "next/link";
 import Title from "../shared/Title";
 
 const Trending = ({ trendingShows }) => {
-  console.log(trendingShows);
   return (
     <section className="container mx-auto px-2 md:px-0 space-y-10">
       <Title title={"Trending"} />
