@@ -1,5 +1,5 @@
 "use client";
-import fallback from "../../../public/placeholder.jpg";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -13,6 +13,7 @@ import Image from "next/image";
 import Title from "../shared/Title";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import ViewAllTitle from "../shared/ViewAllTitle";
+import Link from "next/link";
 
 const NowPlaying = ({ nowPlayingshows: shows }) => {
   return (
@@ -47,19 +48,16 @@ const NowPlaying = ({ nowPlayingshows: shows }) => {
         >
           {shows?.slice(0, 5)?.map((show) => (
             <SwiperSlide key={show?.id}>
-              <div
-                key={show?.id}
-                className="card card-compact w-full relative group shadow-xl "
-              >
+              <div className="card card-compact w-full relative group shadow-xl ">
                 <Image
                   className="w-full h-full object-cover  "
                   width={500}
                   height={400}
                   loading="lazy"
                   src={`${
-                    show?.poster_path
+                    show?.backdrop_path
                       ? `https://image.tmdb.org/t/p/original/${show?.backdrop_path}`
-                      : fallback
+                      : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
                   }`}
                   alt={show?.title}
                 />
@@ -67,12 +65,14 @@ const NowPlaying = ({ nowPlayingshows: shows }) => {
                   <FaRegCirclePlay className="md:text-5xl text-2xl group-hover:text-info transition duration-200" />
 
                   <div>
-                    <p className="md:text-xl text-lg">
-                      {show?.title?.slice(0, 12)} ...
-                    </p>
-                    <span className="md:text-sm text-sm">
-                      {show?.overview?.slice(0, 30)} ...
-                    </span>
+                    <Link href={`/showdetails/${show?.id}`}>
+                      <p className="md:text-xl text-lg">
+                        {show?.title?.slice(0, 12)} ...
+                      </p>
+                      <span className="md:text-sm text-sm">
+                        {show?.overview?.slice(0, 30)} ...
+                      </span>
+                    </Link>
                   </div>
                 </div>
               </div>

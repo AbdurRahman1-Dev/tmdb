@@ -3,6 +3,7 @@ const GetMoviesData = async (params) => {
     const res = await fetch(
       `${process.env.BASE_URL}${params}`,
       {
+        method: "GET",
         headers: {
           accept: "application/json",
           Authorization: `Bearer ${process.env.TMDB_TOKEN}`,

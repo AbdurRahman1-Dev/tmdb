@@ -1,5 +1,5 @@
 "use client";
-import fallback from "../../../public/placeholder.jpg";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -45,7 +45,7 @@ const BannerSection = ({ popularMovies }) => {
                   src={`${
                     movie?.backdrop_path
                       ? `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`
-                      : fallback
+                      : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
                   }`}
                   alt={movie?.title}
                 />
@@ -62,7 +62,7 @@ const BannerSection = ({ popularMovies }) => {
                           src={`${
                             movie?.backdrop_path
                               ? `https://image.tmdb.org/t/p/original/${movie?.poster_path}`
-                              : fallback
+                              : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
                           }`}
                           alt={movie?.title}
                         />
@@ -74,11 +74,11 @@ const BannerSection = ({ popularMovies }) => {
                         <p className="md:text-sm text-xs text-gray-200">
                           {movie?.overview.slice(0, 40)} ...
                         </p>
-                        <p className="md:text-sm text-xs text-gray-300">
+                        <p className="md:text-sm text-xs text-gray-300 hidden md:block">
                           <FaCalendarCheck className="inline-block mr-1" />{" "}
                           {movie?.release_date}
                         </p>
-                        <Link href={"/"}>
+                        <Link href={`/showdetails/${movie?.id}`}>
                           <button className="btn btn-info md:btn-sm btn-xs rounded-full flex gap-1 group my-1 md:mt-2">
                             Details
                             <FaAngleRight className="inline-block group-hover:translate-x-1 duration-200" />
