@@ -68,13 +68,13 @@ const BannerSection = ({ popularMovies }) => {
                         />
                       </div>
                       <div className=" w-full md:space-y-2 space-y-[2px]">
-                        <h2 className="md:text-4xl text-sm text-gray-100 font-bold">
+                        <h2 className="md:text-4xl text-base text-gray-100 font-bold">
                           {movie?.title}
                         </h2>
-                        <p className="md:text-sm text-[12px] text-gray-200">
+                        <p className="md:text-sm text-xs text-gray-200">
                           {movie?.overview.slice(0, 40)} ...
                         </p>
-                        <p className="md:text-sm text-[10px] text-gray-300">
+                        <p className="md:text-sm text-xs text-gray-300">
                           <FaCalendarCheck className="inline-block mr-1" />{" "}
                           {movie?.release_date}
                         </p>

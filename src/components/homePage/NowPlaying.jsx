@@ -24,7 +24,7 @@ const NowPlaying = ({ nowPlayingshows: shows }) => {
       />
       <div className="w-full">
         <Swiper
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={10}
           autoplay={{
             delay: 2500,
@@ -67,10 +67,10 @@ const NowPlaying = ({ nowPlayingshows: shows }) => {
                   <FaRegCirclePlay className="md:text-5xl text-2xl group-hover:text-info transition duration-200" />
 
                   <div>
-                    <p className="md:text-xl text-sm">
+                    <p className="md:text-xl text-lg">
                       {show?.title?.slice(0, 12)} ...
                     </p>
-                    <span className="md:text-sm text-xs hidden md:block">
+                    <span className="md:text-sm text-sm">
                       {show?.overview?.slice(0, 30)} ...
                     </span>
                   </div>
