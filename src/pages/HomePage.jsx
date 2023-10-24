@@ -11,7 +11,6 @@ const HomePage = async ({ popularMovies }) => {
     <div className="md:-mt-[64px] space-y-14">
       <BannerSection popularMovies={popularMovies} />
       <Suspense fallback={<LoadingBig />}>
-        {" "}
         <Trending trendingShows={trendingShows} />
       </Suspense>
     </div>
