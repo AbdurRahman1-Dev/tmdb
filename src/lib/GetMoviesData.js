@@ -8,7 +8,7 @@ const GetMoviesData = async (params) => {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_TOKEN}`,
         },
       },
-      { cache: "force-cache" }
+      { next: { revalidate: 3600 } }
     );
     return res.json();
   } catch (error) {
