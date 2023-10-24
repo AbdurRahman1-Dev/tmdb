@@ -56,6 +56,7 @@ const Trending = ({ trendingShows }) => {
                     className="w-[150px] md:w-[250px] h-[180px] md:h-[270px] object-cover"
                     width={150}
                     height={200}
+                    loading="lazy"
                     src={`${
                       show?.poster_path
                         ? `https://image.tmdb.org/t/p/original/${show?.poster_path}`

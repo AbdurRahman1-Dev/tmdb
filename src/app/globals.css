@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* banner style */
 .bannerGradient {
   background: rgb(29, 35, 42);
   background: linear-gradient(
@@ -22,6 +23,27 @@
   );
 }
 
+.playingBgGradinet {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8631827731092436) 22%,
+    rgba(30, 36, 43, 0) 35%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8631827731092436) 22%,
+    rgba(30, 36, 43, 0) 35%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8631827731092436) 22%,
+    rgba(30, 36, 43, 0) 35%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#1e242b",GradientType=1);
+}
+
+/* slider arrow styles */
 .swiper-button-prev::after {
   content: "" !important;
 }
