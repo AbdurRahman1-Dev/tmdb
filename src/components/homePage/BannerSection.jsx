@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const BannerSection = ({ popularMovies }) => {
   return (
-    <section className="w-full">
+    <section className="w-full md:-mt-16 -z-0">
       <Swiper
         centeredSlides={true}
         autoplay={{
@@ -35,23 +35,30 @@ const BannerSection = ({ popularMovies }) => {
             <SwiperSlide key={movie?.id}>
               <div
                 key={movie?.id}
-                style={{
-                  backgroundImage: `url(${
+                className="md:h-screen h-[200px] w-full flex justify-start items-center object-cover"
+              >
+                {/* background Image */}
+                <Image
+                  className="w-full h-full -z-0 bg-no-repeat object-cover object-top bg-center relative"
+                  fill={true}
+                  loading="lazy"
+                  src={`${
                     movie?.backdrop_path
                       ? `https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`
                       : fallback
-                  })`,
-                }}
-                className="md:h-screen h-[200px] w-full flex justify-start items-center bg-cover bg-center bg-no-repeat object-cover"
-              >
-                <div className="h-full bannerGradient w-full ">
+                  }`}
+                  alt={movie?.title}
+                />
+
+                <div className="h-full bannerGradient w-full z-10">
                   <div className="h-full flex items-end justify-between container mx-auto md:pb-5 w-full">
                     <div className="w-full flex justify-start items-end gap-5 ">
                       <div>
                         <Image
-                          className="w-[100px] md:w-[250px]"
+                          className="w-[150px] md:w-[250px]"
                           width={150}
                           height={200}
+                          loading="lazy"
                           src={`${
                             movie?.backdrop_path
                               ? `https://image.tmdb.org/t/p/original/${movie?.poster_path}`
@@ -64,7 +71,7 @@ const BannerSection = ({ popularMovies }) => {
                         <h2 className="md:text-4xl text-sm text-gray-100 font-bold">
                           {movie?.title}
                         </h2>
-                        <p className="md:text-sm text-[10px] text-gray-200">
+                        <p className="md:text-sm text-[12px] text-gray-200">
                           {movie?.overview.slice(0, 40)} ...
                         </p>
                         <p className="md:text-sm text-[10px] text-gray-300">

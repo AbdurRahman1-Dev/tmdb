@@ -26,7 +26,7 @@ const Trending = ({ trendingShows }) => {
           navigation={true}
           breakpoints={{
             640: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
             768: {
               slidesPerView: 4,
@@ -43,7 +43,7 @@ const Trending = ({ trendingShows }) => {
               <div key={show.id} className="flex items-end gap-3 w-full h-full">
                 <div className="text-center space-y-2 flex flex-col justify-end items-end w-1/4">
                   <p
-                    className="transform rotate-180 text-center md:text-[16px] text-xs"
+                    className="transform rotate-180 text-center md:text-[16px] text-sm"
                     style={{ writingMode: "vertical-rl" }}
                   >
                     {show?.title.slice(0, 18)} ...
@@ -51,9 +51,9 @@ const Trending = ({ trendingShows }) => {
 
                   <p className="text-xl text-info">{i + 1}</p>
                 </div>
-                <div className="w-3/4">
+                <div className="w-3/4 h-full">
                   <Image
-                    className="w-[100px] md:w-[250px]"
+                    className="w-[150px] md:w-[250px] h-[180px] md:h-[270px] object-cover"
                     width={150}
                     height={200}
                     src={`${

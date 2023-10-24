@@ -79,9 +79,9 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered focus:outline-none md:w-auto w-full"
+              className="input input-bordered focus:outline-none md:w-auto w-full input-sm md:input-md"
             />
-            <button className="absolute top-1/2  -translate-x-1/2 -translate-y-1/2 right-3 text-xl text-info duration-200">
+            <button className="absolute top-1/2  -translate-x-1/2 -translate-y-1/2 right-3 md:text-xl text-sm text-info duration-200">
               <FaMagnifyingGlass />
             </button>
           </form>

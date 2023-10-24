@@ -1,8 +1,7 @@
 import BannerSection from "@/components/homePage/BannerSection";
 import Trending from "@/components/homePage/Trending";
-import LoadingBig from "@/components/shared/LoadingBig";
+
 import GetMoviesData from "@/lib/GetMoviesData";
-import { Suspense } from "react";
 
 export default async function Home() {
   const { results: popularMovies } = await GetMoviesData("movie/popular");
@@ -11,9 +10,7 @@ export default async function Home() {
   return (
     <main className="space-y-10">
       <BannerSection popularMovies={popularMovies} />
-      <Suspense fallback={<LoadingBig />}>
-        <Trending trendingShows={trendingShows} />
-      </Suspense>
+      <Trending trendingShows={trendingShows} />
     </main>
   );
 }
