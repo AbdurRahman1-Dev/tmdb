@@ -14,7 +14,7 @@ import Title from "../shared/Title";
 
 const Trending = ({ trendingShows }) => {
   return (
-    <section className="container mx-auto px-2 md:px-0 space-y-10">
+    <section className="container mx-auto px-2 md:px-0 space-y-5 ">
       <Title title={"Trending"} />
       <div className="w-full">
         <Swiper

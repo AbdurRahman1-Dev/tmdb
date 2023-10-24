@@ -16,7 +16,7 @@ import ViewAllTitle from "../shared/ViewAllTitle";
 
 const NowPlaying = ({ nowPlayingshows: shows }) => {
   return (
-    <section className="container mx-auto px-2 md:px-0 space-y-10">
+    <section className="container mx-auto px-2 md:px-0 space-y-5 ">
       <Title title={"Now Playing"} />
       <ViewAllTitle
         title={"Watch Now"}
