@@ -24,7 +24,7 @@ const NowPlaying = ({ nowPlayingshows: shows }) => {
       />
       <div className="w-full">
         <Swiper
-          slidesPerView={1}
+          slidesPerView={2}
           spaceBetween={10}
           autoplay={{
             delay: 2500,
