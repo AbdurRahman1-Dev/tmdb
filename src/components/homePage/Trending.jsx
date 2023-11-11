@@ -51,7 +51,8 @@ const Trending = ({ trendingShows }) => {
                       className="transform rotate-180 text-center md:text-[16px] text-sm group-hover:text-info transition duration-200"
                       style={{ writingMode: "vertical-rl" }}
                     >
-                      {show?.title.slice(0, 18)} ...
+                      {show?.title?.slice(0, 18) || show?.name?.slice(0, 18)}{" "}
+                      ...
                     </p>
 
                     <p className="text-xl text-info">{i + 1}</p>
@@ -67,7 +68,7 @@ const Trending = ({ trendingShows }) => {
                           ? `https://image.tmdb.org/t/p/original/${show?.poster_path}`
                           : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
                       }`}
-                      alt={show?.title}
+                      alt={show?.title || show?.name}
                     />
                   </div>
                 </div>

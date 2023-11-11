@@ -7,6 +7,8 @@ import {
 import ThemeSwirch from "./ThemeSwirch";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Search from "./Search";
+
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false);
 
@@ -74,7 +76,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="w-full justify-start border-gray-600 md:border-r-[1px] md:pr-5">
+        {/* <div className="w-full justify-start border-gray-600 md:border-r-[1px] md:pr-5">
           <form className="form-control w-full relative">
             <input
               type="text"
@@ -85,12 +87,14 @@ const Navbar = () => {
               <FaMagnifyingGlass />
             </button>
           </form>
-        </div>
+        </div> */}
+        <Search />
         <div className="md:flex gap-5 hidden">
           <div className="indicator">
             <span className="indicator-item badge badge-info">0</span>
             <button className="btn btn-sm">Watchlist</button>
           </div>
+
           <button className="btn btn-sm btn-info">SignIn</button>
           <ThemeSwirch />
         </div>

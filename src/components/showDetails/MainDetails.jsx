@@ -9,6 +9,8 @@ import {
   FaUser,
 } from "react-icons/fa6";
 import ProductionCom from "./CastSlider";
+import AddToWishListBtn from "../shared/AddToWishListBtn";
+
 const MainDetails = ({ showData, cast }) => {
   return (
     <>
@@ -22,7 +24,7 @@ const MainDetails = ({ showData, cast }) => {
               ? `https://image.tmdb.org/t/p/original/${showData?.backdrop_path}`
               : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
           }`}
-          alt={showData?.title}
+          alt={showData?.title || showData?.name}
         />
 
         <div className=" md:bg-[#000000c5] w-full h-full backdrop-filter backdrop-blur-lg">
@@ -38,18 +40,18 @@ const MainDetails = ({ showData, cast }) => {
                     ? `https://image.tmdb.org/t/p/original/${showData?.poster_path}`
                     : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
                 }`}
-                alt={showData?.title}
+                alt={showData?.title || showData?.name}
               />
 
               <div className=" md:space-y-5 space-y-2">
                 <h2 className="md:text-4xl text-base text-gray-100 font-bold">
-                  {showData?.title}
+                  {showData?.title || showData?.name}
                 </h2>
 
                 <div className="flex items-center gap-3">
                   <p className="md:text-lg text-sm text-gray-200 ">
                     <FaCalendarCheck className="inline-block mr-1" />{" "}
-                    {showData?.release_date}
+                    {showData?.release_date || showData?.first_air_date}
                   </p>
 
                   <p className="md:text-lg text-sm text-gray-200 ">
@@ -74,10 +76,11 @@ const MainDetails = ({ showData, cast }) => {
                       </span>
                     </p>
 
-                    <button className="btn btn-info md:btn-sm btn-xs rounded-full flex gap-1 group my-1 md:mt-2">
+                    {/* <button className="btn btn-info md:btn-sm btn-xs rounded-full flex gap-1 group my-1 md:mt-2">
                       Add to WishList
                       <FaPlus className="inline-block group-hover:scale-105 duration-200" />
-                    </button>
+                    </button> */}
+                    <AddToWishListBtn />
                     <p className="md:text-sm text-xs text-gray-200">
                       <span>Tagline: </span> {showData?.tagline}
                     </p>
